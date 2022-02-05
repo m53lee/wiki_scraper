@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const wiki = require('wikijs').default;
+import wiki from 'wikijs';
 
 
 // Gets summary content of the requested keyword from Wikipedia
@@ -15,22 +15,21 @@ async function get_link(keyword) {
     const page = await wiki()
         .page(keyword);
     const link = page.url();
-    return link
+    return link;
 }
 
 app.get('/', (req, res) => {
     res.status(200).send("Wikipedia Scraper")
 })
 
-app.get('/summary/:keyword', (req, res) => {
+app.get('/:keyword', (req, res) => {
     get_summary(req.params.keyword).then(summary => {
-        res.send(summary)
-    })
-})
-
-app.get('/link/:keyword', (req, res) => {
-    get_link(req.params.keyword).then(link => {
-        res.send(link)
+        get_link(req.params.keyword).then(link => {
+            res.json({
+                summary: summary,
+                link: link
+            })
+        })
     })
 })
 
