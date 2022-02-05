@@ -1,6 +1,6 @@
-import express from 'express';
+const express = require('express');
 const app = express();
-import wiki from 'wikijs';
+const wiki = require('wikijs').default;
 
 
 // Gets summary content of the requested keyword from Wikipedia
