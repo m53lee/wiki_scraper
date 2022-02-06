@@ -4,4 +4,4 @@ This microservice scrapes Wikipedia summary content and URL based on the query p
 
 
 
-Source: https://www.npmjs.com/package/wikijs
+Library used: https://www.npmjs.com/package/wikijs

@@ -5,17 +5,25 @@ const wiki = require('wikijs').default;
 
 // Gets summary content of the requested keyword from Wikipedia
 async function get_summary(keyword) {
-    const page = await wiki()
-        .page(keyword);
-    const summary = await page.summary();
-    return summary;
+    try {
+        const page = await wiki()
+            .page(keyword);
+        const summary = await page.summary();
+        return summary;
+    } catch (err) {
+        return 'There has been an error'
+    }
 }
 
 async function get_link(keyword) {
-    const page = await wiki()
-        .page(keyword);
-    const link = page.url();
-    return link;
+    try {
+        const page = await wiki()
+            .page(keyword);
+        const link = page.url();
+        return link;
+    } catch (err) {
+        return 'There has been an error'
+    }
 }
 
 app.get('/', (req, res) => {
