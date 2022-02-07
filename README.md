@@ -2,7 +2,10 @@
 
 This microservice scrapes Wikipedia summary content and URL based on the query parameter (keyword).
 
-## Request endpoint
+## To get started run the following command:
+node index.js
+
+## Request Endpoint
 GET/info/:keyword
 
 ### Example
