@@ -15,6 +15,7 @@ async function get_summary(keyword) {
     }
 }
 
+// Gets the Wikipedia URL of the requested keyword
 async function get_link(keyword) {
     try {
         const page = await wiki()
