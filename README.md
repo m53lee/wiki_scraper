@@ -7,11 +7,14 @@ This microservice scrapes Wikipedia summary content and URL based on the query p
 node index.js
 ```
 
-## Request Endpoint
+## Request
 GET/info/:keyword
 
+### Request Parameter
+keyword
+
 ### Example
-* GET/info/apples
+* GET/info/ketchup
 * Local: localhost:8080/info/ketchup
 
 ## Response
