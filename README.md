@@ -15,8 +15,8 @@ GET/info/:keyword
 ## Response
 
 ### If the request is successful:
-Status: 200 OK
-Response format: JSON
+* Status: 200 OK
+* Response format: JSON
 ```
 {
     "summary": "Ketchup or catsup is a type of table condiment with a sweet and tangy flavor...",
@@ -25,8 +25,8 @@ Response format: JSON
 ```
 
 ### If the request is unsuccessful:
-Status: 404 Not Found
-Response format: JSON
+* Status: 404 Not Found
+* Response format: JSON
 ```
 {
     "Error": "The keyword was not found on Wikipedia"
