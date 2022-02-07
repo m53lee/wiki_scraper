@@ -24,4 +24,5 @@ Status: 404 Not Found
     "Error": "The keyword was not found on Wikipedia"
 }
 
-Library used: https://www.npmjs.com/package/wikijs
+# Source:
+https://www.npmjs.com/package/wikijs
