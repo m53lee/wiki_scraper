@@ -2,16 +2,16 @@
 
 This microservice scrapes Wikipedia summary content and URL based on the query parameter (keyword).
 
-# Request endpoint
+## Request endpoint
 GET/info/:keyword
 
-## Example
+### Example
 * GET/info/apples
 * Local: localhost:8080/info/ketchup
 
-# Response
+## Response
 
-## If the request is successful:
+### If the request is successful:
 Status: 200 OK
 #
 ```
@@ -21,7 +21,7 @@ Status: 200 OK
 }
 ```
 
-## If the request is unsuccessful:
+### If the request is unsuccessful:
 Status: 404 Not Found
 ```
 {
@@ -29,5 +29,5 @@ Status: 404 Not Found
 }
 ```
 
-# Source:
+## Source:
 https://www.npmjs.com/package/wikijs
