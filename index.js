@@ -11,7 +11,7 @@ async function get_summary(keyword) {
         const summary = await page.summary();
         return summary;
     } catch (err) {
-        return 'There has been an error'
+        return 'Error'
     }
 }
 
@@ -22,7 +22,7 @@ async function get_link(keyword) {
         const link = page.url();
         return link;
     } catch (err) {
-        return 'There has been an error'
+        return 'Error'
     }
 }
 
@@ -30,22 +30,20 @@ app.get('/', (req, res) => {
     res.status(200).send("Wikipedia Scraper")
 })
 
-app.get('/:keyword', (req, res) => {
+app.get('/info/:keyword', (req, res) => {
     get_summary(req.params.keyword).then(summary => {
         get_link(req.params.keyword).then(link => {
-            res.json({
-                summary: summary,
-                link: link
-            })
+            if (link === 'Error' || summary === 'Error') {
+                res.status(404).json({
+                    'Error': 'The keyword was not found on Wikipedia'
+                })
+            } else {
+                res.status(200).json({
+                    summary: summary,
+                    link: link
+                })
+            }
         })
-    })
-})
-
-// Error handler
-app.use((req, res, next) => {
-    res.status(404).send({
-        status: 404,
-        error: 'Not found'
     })
 })
 
