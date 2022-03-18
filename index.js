@@ -1,3 +1,5 @@
+// Reference: https://www.npmjs.com/package/wikijs
+
 const express = require('express');
 const app = express();
 const wiki = require('wikijs').default;
